@@ -1,0 +1,1 @@
+<h1>Hello Phonenix, my name is <%=String.capitalize @name %> please take me to your world!!!</h1>
