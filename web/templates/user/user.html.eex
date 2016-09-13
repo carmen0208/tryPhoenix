@@ -1,0 +1,6 @@
+<!--
+  user = user = NinjaPhoenix.Repo.get NinjaPhoenix.User, "4"
+  view = NinjaPhoenix.UserView.render("user.html", user: user)
+  Phoenix.HTML.safe_to_string(view)
+-->
+<b><%= first_name(@user) %></b>  (<%=@user.id %>)

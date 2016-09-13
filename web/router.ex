@@ -16,9 +16,11 @@ defmodule NinjaPhoenix.Router do
   scope "/", NinjaPhoenix do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
     get "/hello", HelloController, :world
     get "/hello/:name", HelloController, :world
+    get "/users", UserController, :index
+    get "/users/:id", UserController, :show
+    get "/", PageController, :index
 
   end
 
