@@ -47,3 +47,20 @@ $ mix ecto.create
 =# CREATE ROLE postgres LOGIN CREATEDB;
 CREATE ROLE
 ```
+## Command Lines:
+
+```
+#DB :
+mix ecto.create
+mix ecto.gen.migration create_user
+#=>Compiling 2 files (.ex)
+#=>* creating priv/repo/migrations
+#=>* creating priv/repo/migrations/20160913032755_create_user.exs
+mix ecto.migrate
+#=> 13:47:02.649 [info]  == Running NinjaPhoenix.Repo.Migrations.CreateUser.change/0 forward
+#=> 13:47:02.649 [info]  create table users
+#=> 13:47:02.663 [info]  create index users_username_index
+#=> 13:47:02.669 [info]  == Migrated in 0.0s
+
+mix phoenix.routes
+```

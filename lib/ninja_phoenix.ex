@@ -9,7 +9,7 @@ defmodule NinjaPhoenix do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      #      supervisor(NinjaPhoenix.Repo, []),
+      supervisor(NinjaPhoenix.Repo, []),
       # Start the endpoint when the application starts
       supervisor(NinjaPhoenix.Endpoint, []),
       # Start your own worker by calling: NinjaPhoenix.Worker.start_link(arg1, arg2, arg3)

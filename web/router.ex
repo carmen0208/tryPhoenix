@@ -18,8 +18,9 @@ defmodule NinjaPhoenix.Router do
 
     get "/hello", HelloController, :world
     get "/hello/:name", HelloController, :world
-    get "/users", UserController, :index
-    get "/users/:id", UserController, :show
+    #get "/users", UserController, :index
+    #    get "/users/:id", UserController, :show
+    resources "/users", UserController, only: [:index, :show, :new, :create]
     get "/", PageController, :index
 
   end
