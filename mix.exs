@@ -16,10 +16,11 @@ defmodule NinjaPhoenix.Mixfile do
   # Configuration for the OTP application.
   #
   # Type `mix help compile.app` for more information.
+  # https://hex.pm/packages/comeonin
   def application do
     [mod: {NinjaPhoenix, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +38,10 @@ defmodule NinjaPhoenix.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 2.0"}
+   ]
+     
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
