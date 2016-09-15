@@ -15,7 +15,7 @@ defmodule NinjaPhoenix.Auth do
 
   def login(conn, user) do
     conn
-     |> assign(:current_user,user)
+     |> assign(:current_user, user)
      |> put_session(:user_id, user.id)
      |> configure_session(renew: true)
   end
@@ -41,4 +41,20 @@ defmodule NinjaPhoenix.Auth do
         {:error, :not_found, conn}
     end
   end
+
+  import Phoenix.Controller
+  alias NinjaPhoenix.Router.Helpers
+
+  def authenticate_user(conn, _opts) do
+    #IO.puts conn.assigns.current_user
+    if conn.assigns.current_user do
+      conn
+    else
+      conn
+       |> put_flash(:error, "You must be logged in to access that page")
+       |> redirect(to: Helpers.page_path(conn, :index))
+       |> halt()
+    end
+  end
+
 end

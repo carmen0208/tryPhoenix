@@ -63,4 +63,8 @@ mix ecto.migrate
 #=> 13:47:02.669 [info]  == Migrated in 0.0s
 
 mix phoenix.routes
+
+##Generate some code with DB relations:
+ mix phoenix.gen.html Video videos user_id:references:users url:string title:string description:text
+ mix ecto.migrate
 ```

@@ -2,7 +2,7 @@ defmodule NinjaPhoenix.UserController do
   use NinjaPhoenix.Web, :controller
   alias NinjaPhoenix.User
 
-  plug :authenticate when action in [:index, :show]
+  plug :authenticate_user when action in [:index, :show]
   def index(conn, _parame) do
     #case authenticate(conn) do
     #  %Plug.Conn{halted: true} = conn -> 
@@ -39,17 +39,6 @@ defmodule NinjaPhoenix.UserController do
     end
   end
 
-  defp authenticate(conn, _opts) do
-    #IO.puts conn.assigns.current_user
-    if conn.assigns.current_user do
-      conn
-    else
-      conn
-       |> put_flash(:error, "You must be logged in to access that page")
-       |> redirect(to: page_path(conn, :index))
-       |> halt()
-    end
-  end
 end
 
 

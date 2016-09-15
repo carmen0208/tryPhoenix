@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" role="main">
       <header class="header">
         <ol class="breadcrumb text-right">
           <%= if @current_user do %>
@@ -26,6 +26,7 @@
             <li><%= link "Log In", to: session_path(@conn, :new) %></li>
           <% end %>
         </ol>
+        <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

@@ -32,10 +32,11 @@ defmodule NinjaPhoenix.Web do
 
       alias NinjaPhoenix.Repo
       import Ecto
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
 
       import NinjaPhoenix.Router.Helpers
       import NinjaPhoenix.Gettext
+      import NinjaPhoenix.Auth, only: [authenticate_user: 2] #New import
     end
   end
 
@@ -58,6 +59,8 @@ defmodule NinjaPhoenix.Web do
   def router do
     quote do
       use Phoenix.Router
+      
+      import NinjaPhoenix.Auth, only: [authenticate_user: 2] #New import
     end
   end
 
